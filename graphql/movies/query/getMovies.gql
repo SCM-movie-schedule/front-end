@@ -1,0 +1,37 @@
+query getMovies($query: movies_bool_exp, $limit: Int, $offset: Int, $order_by: [movies_order_by!]) {
+  movies(where: $query, limit: $limit, offset: $offset, order_by: $order_by) {
+    date
+    director_id
+    director {
+      first_name
+      id
+      last_name
+      image {
+        url
+      }
+    }
+    image{
+      id
+      url
+    }
+    discrption
+    duration
+    id
+    title
+    status
+    movies_generes {
+      genere {
+        name
+        id
+      }
+    }
+    movies_actors {
+      actor {
+        first_name
+        last_name
+        id
+      }
+    }
+    rating_average
+  }
+}

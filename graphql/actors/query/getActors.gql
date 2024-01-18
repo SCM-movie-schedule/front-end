@@ -1,0 +1,12 @@
+query getActors($query: actors_bool_exp!) {
+  actors(where: $query){
+    first_name
+    id
+    last_name
+    image {
+      id
+      url
+    }
+    no_of_movie
+  }
+}

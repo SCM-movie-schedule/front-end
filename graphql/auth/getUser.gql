@@ -1,0 +1,36 @@
+query getUser($id:uuid!) {
+  users_by_pk(id: $id) {
+    email
+    firstName
+    id
+    lastName
+    role
+    image{
+      id
+      url
+    }
+     bookings(where: {user_id: {_eq: $id}}) {
+      id
+      movie {
+        id
+        title
+        image {          url
+        }
+      }
+    }
+    tickets(where: {user_id: {_eq: $id}}) {
+      id
+      price
+      date
+      seat_number
+      movie {
+        id
+        title
+        date
+        image {
+          url
+        }
+      }
+    }
+  }
+}

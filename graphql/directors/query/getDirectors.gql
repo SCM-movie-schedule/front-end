@@ -1,0 +1,13 @@
+query getDirectors($query: directors_bool_exp!) {
+  directors(where: $query){
+    first_name
+    id
+    last_name
+    image {
+      id
+      url
+    }
+    no_of_movie
+
+  }
+}

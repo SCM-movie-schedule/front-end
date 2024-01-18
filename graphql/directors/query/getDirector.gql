@@ -1,0 +1,11 @@
+query getDirector($id : uuid!) {
+  directors_by_pk(id: $id) { 
+      first_name
+      id
+      last_name
+      image {
+        id
+        url
+      } 
+  }
+}

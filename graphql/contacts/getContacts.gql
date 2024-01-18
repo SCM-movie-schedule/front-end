@@ -1,0 +1,9 @@
+subscription getContacts {
+  contacts(distinct_on: id) {
+    body
+    email
+    id
+    subject
+    date
+  }
+}

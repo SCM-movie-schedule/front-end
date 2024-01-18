@@ -1,0 +1,11 @@
+query getActor($id : uuid!) {
+  actors_by_pk(id: $id) { 
+      first_name
+      id
+      last_name
+      image {
+        id
+        url
+      } 
+  }
+}
